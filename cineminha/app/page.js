@@ -76,7 +76,7 @@ export default function Home() {
 
       <header className="header">
         <div className="logo">
-          <span>🎬</span> CineMax
+          <span>🎬</span> CineGuibs
         </div>
 
         <nav>
