@@ -1,50 +1,75 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import "./globals.css";
 
 export default function Home() {
+const router = useRouter();
+
 const [filme, setFilme] = useState("");
 const [horario, setHorario] = useState("");
-const [cadeira, setCadeira] = useState(null);
-const [comprado, setComprado] = useState(false);
+const [cadeiras, setCadeiras] = useState([]);
 
 const filmes = [
 {
 id: 1,
-nome: "Vingadores: Ultimato",
+nome: "Carros 1",
 imagem:
-"https://image.tmdb.org/t/p/w500/or06FN3Dka5tukK1e9sl16pB3iy.jpg",
+"https://image.tmdb.org/t/p/w1280/A7nssMRIPauZhEVf2dzwsf4EALO.jpg",
 },
 {
 id: 2,
-nome: "Homem-Aranha: Sem Volta Para Casa",
+nome: "O Candidato Honesto 2",
 imagem:
-"https://image.tmdb.org/t/p/w500/1g0dhYtq4irTY1GPXvft6k4YLjm.jpg",
+"https://www.themoviedb.org/t/p/w1280/nies8ZuM673DAtSufh4Ww3dJJyd.jpg",
 },
 {
 id: 3,
-nome: "Interestelar",
+nome: "O Gato de Botas 2",
 imagem:
-"https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg",
+"https://www.themoviedb.org/t/p/w1280/i0tScFVNCcgDzz9AgjYd3LDXGTO.jpg",
 },
 ];
 
 const horarios = ["14:00", "16:30", "19:00", "21:30"];
 
 const selecionarCadeira = (numero) => {
-setCadeira(numero);
-setComprado(false);
+if (cadeiras.includes(numero)) {
+setCadeiras(cadeiras.filter((item) => item !== numero));
+} else {
+setCadeiras([...cadeiras, numero]);
+}
 };
 
 const comprarIngresso = () => {
-if (!filme || !horario || !cadeira) {
-alert("Selecione o filme, o horário e uma cadeira.");
+if (!filme) {
+alert("Selecione um filme.");
 return;
 }
 
 ```
-setComprado(true);
+if (!horario) {
+  alert("Selecione um horário.");
+  return;
+}
+
+if (cadeiras.length === 0) {
+  alert("Selecione pelo menos uma cadeira.");
+  return;
+}
+
+const dadosCompra = {
+  filme,
+  horario,
+  cadeiras,
+  quantidade: cadeiras.length,
+  valor: cadeiras.length * 25,
+};
+
+localStorage.setItem("compra", JSON.stringify(dadosCompra));
+
+router.push("/confirmacao");
 ```
 
 };
@@ -61,7 +86,7 @@ return ( <main className="pagina"> <header className="header"> <div className="l
 
   <section className="hero">
     <div>
-      <p className="subtitulo">BEM-VINDO AO CINEGUIBS</p>
+      <p className="subtitulo">BEM-VINDO AO CineGuibs</p>
 
       <h1>
         Seu filme.
@@ -72,7 +97,8 @@ return ( <main className="pagina"> <header className="header"> <div className="l
       </h1>
 
       <p className="descricao">
-        Escolha seu filme, horário e cadeira e garanta seu ingresso.
+        Escolha seu filme, horário e suas cadeiras e garanta seus
+        ingressos.
       </p>
 
       <a href="#filmes" className="botaoHero">
@@ -84,6 +110,7 @@ return ( <main className="pagina"> <header className="header"> <div className="l
   <section className="conteudo">
     <section id="filmes" className="secao">
       <h2>Escolha seu filme</h2>
+
       <p className="textoSecao">
         Selecione o filme que deseja assistir.
       </p>
@@ -95,10 +122,7 @@ return ( <main className="pagina"> <header className="header"> <div className="l
             className={`filme ${
               filme === item.nome ? "filmeSelecionado" : ""
             }`}
-            onClick={() => {
-              setFilme(item.nome);
-              setComprado(false);
-            }}
+            onClick={() => setFilme(item.nome)}
           >
             <img src={item.imagem} alt={item.nome} />
 
@@ -106,7 +130,9 @@ return ( <main className="pagina"> <header className="header"> <div className="l
               <h3>{item.nome}</h3>
 
               {filme === item.nome && (
-                <span className="selecionado">✓ Selecionado</span>
+                <span className="selecionado">
+                  ✓ Selecionado
+                </span>
               )}
             </div>
           </div>
@@ -116,6 +142,7 @@ return ( <main className="pagina"> <header className="header"> <div className="l
 
     <section id="horarios" className="secao">
       <h2>Escolha o horário</h2>
+
       <p className="textoSecao">
         Selecione um dos horários disponíveis.
       </p>
@@ -127,10 +154,7 @@ return ( <main className="pagina"> <header className="header"> <div className="l
             className={`horario ${
               horario === hora ? "horarioSelecionado" : ""
             }`}
-            onClick={() => {
-              setHorario(hora);
-              setComprado(false);
-            }}
+            onClick={() => setHorario(hora)}
           >
             {hora}
           </button>
@@ -139,9 +163,10 @@ return ( <main className="pagina"> <header className="header"> <div className="l
     </section>
 
     <section id="cadeiras" className="secao">
-      <h2>Escolha sua cadeira</h2>
+      <h2>Escolha suas cadeiras</h2>
+
       <p className="textoSecao">
-        Selecione uma cadeira disponível.
+        Você pode selecionar mais de uma cadeira.
       </p>
 
       <div className="cinema">
@@ -152,7 +177,9 @@ return ( <main className="pagina"> <header className="header"> <div className="l
             <button
               key={numero}
               className={`cadeira ${
-                cadeira === numero ? "cadeiraSelecionada" : ""
+                cadeiras.includes(numero)
+                  ? "cadeiraSelecionada"
+                  : ""
               }`}
               onClick={() => selecionarCadeira(numero)}
             >
@@ -181,45 +208,46 @@ return ( <main className="pagina"> <header className="header"> <div className="l
       <div className="resumoConteudo">
         <div>
           <span>Filme</span>
-          <strong>{filme || "Não selecionado"}</strong>
+          <strong>
+            {filme || "Não selecionado"}
+          </strong>
         </div>
 
         <div>
           <span>Horário</span>
-          <strong>{horario || "Não selecionado"}</strong>
+          <strong>
+            {horario || "Não selecionado"}
+          </strong>
         </div>
 
         <div>
-          <span>Cadeira</span>
-          <strong>{cadeira ? `Cadeira ${cadeira}` : "Não selecionada"}</strong>
+          <span>Cadeiras</span>
+          <strong>
+            {cadeiras.length > 0
+              ? cadeiras.join(", ")
+              : "Não selecionadas"}
+          </strong>
         </div>
 
         <div>
-          <span>Ingresso</span>
-          <strong>R$ 25,00</strong>
+          <span>Total</span>
+          <strong>
+            R$ {(cadeiras.length * 25).toFixed(2).replace(".", ",")}
+          </strong>
         </div>
       </div>
 
-      <button className="botaoComprar" onClick={comprarIngresso}>
+      <button
+        className="botaoComprar"
+        onClick={comprarIngresso}
+      >
         Confirmar compra
       </button>
-
-      {comprado && (
-        <div className="sucesso">
-          <span>✓</span>
-          <div>
-            <strong>Ingresso comprado com sucesso!</strong>
-            <p>
-              {filme} — {horario} — Cadeira {cadeira}
-            </p>
-          </div>
-        </div>
-      )}
     </section>
   </section>
 
   <footer>
-    <p>© 2026 CineMax — Sistema de compra de ingressos</p>
+    <p>© 2026 CineGuibs — Sistema de compra de ingressos</p>
   </footer>
 </main>
 
