@@ -55,7 +55,7 @@ return ( <main className="confirmacaoPagina"> <div className="confirmacaoCard">
     <div className="ingresso">
 
       <div className="ingressoTopo">
-        <span>CINEMAX</span>
+        <span>CineGuibs</span>
         <span>INGRESSO</span>
       </div>
 
