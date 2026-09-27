@@ -1,14 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useSearchParams, useRouter } from "next/navigation";
 import Parse from "../../lib/parse";
 
 export default function EditarFilme() {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  const id = searchParams.get("id");
+  const [id, setId] = useState(null);
 
   const [nome, setNome] = useState("");
   const [genero, setGenero] = useState("");
@@ -18,15 +14,20 @@ export default function EditarFilme() {
   const [mensagem, setMensagem] = useState("");
 
   useEffect(() => {
-    if (id) {
-      buscarFilme();
-    }
-  }, [id]);
+    const parametros = new URLSearchParams(window.location.search);
+    const idFilme = parametros.get("id");
 
-  const buscarFilme = async () => {
+    setId(idFilme);
+
+    if (idFilme) {
+      buscarFilme(idFilme);
+    }
+  }, []);
+
+  const buscarFilme = async (idFilme) => {
     try {
       const query = new Parse.Query("Filme");
-      const filme = await query.get(id);
+      const filme = await query.get(idFilme);
 
       setNome(filme.get("nome"));
       setGenero(filme.get("genero"));
@@ -41,6 +42,11 @@ export default function EditarFilme() {
 
   const atualizarFilme = async (e) => {
     e.preventDefault();
+
+    if (!id) {
+      setMensagem("Filme não encontrado.");
+      return;
+    }
 
     try {
       const query = new Parse.Query("Filme");
@@ -57,7 +63,7 @@ export default function EditarFilme() {
       setMensagem("Filme atualizado com sucesso!");
 
       setTimeout(() => {
-        router.push("/filmes");
+        window.location.href = "/filmes";
       }, 1000);
     } catch (erro) {
       console.error(erro);

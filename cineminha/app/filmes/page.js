@@ -9,35 +9,31 @@ export default function Filmes() {
 
   useEffect(() => {
     buscarFilmes();
-    }, []);
+  }, []);
 
-    const buscarFilmes = async () => {
-      try {
-        const query = new Parse.Query("Filme");
-        const resultados = await query.find();
+  const buscarFilmes = async () => {
+    try {
+      const query = new Parse.Query("Filme");
+      const resultados = await query.find();
 
-        const listaFilmes = resultados.map((filme) => ({
-          id: filme.id,
-          nome: filme.get("nome"),
-          genero: filme.get("genero"),
-          duracao: filme.get("duracao"),
-          classificacao: filme.get("classificacao"),
-          imagem: filme.get("imagem"),
-        }));
+      const listaFilmes = resultados.map((filme) => ({
+        id: filme.id,
+        nome: filme.get("nome"),
+        genero: filme.get("genero"),
+        duracao: filme.get("duracao"),
+        classificacao: filme.get("classificacao"),
+        imagem: filme.get("imagem"),
+      }));
 
-        setFilmes(listaFilmes);
-      } catch (erro) {
-        console.error("Erro ao buscar filmes:", erro);
-      } finally {
-        setCarregando(false);
-      }
-    };
-
-    if (carregando) {
-      return <h1>Carregando filmes...</h1>;
+      setFilmes(listaFilmes);
+    } catch (erro) {
+      console.error("Erro ao buscar filmes:", erro);
+    } finally {
+      setCarregando(false);
     }
+  };
 
-    const excluirFilme = async (id) => {
+  const excluirFilme = async (id) => {
     const confirmar = window.confirm(
       "Tem certeza que deseja excluir este filme?"
     );
@@ -52,12 +48,22 @@ export default function Filmes() {
 
       await filme.destroy();
 
-      setFilmes(filmes.filter((item) => item.id !== id));
+      setFilmes((filmesAtuais) =>
+        filmesAtuais.filter((item) => item.id !== id)
+      );
     } catch (erro) {
       console.error("Erro ao excluir filme:", erro);
       alert("Erro ao excluir filme.");
     }
   };
+
+  const editarFilme = (id) => {
+    window.location.href = `/editar-filme?id=${id}`;
+  };
+
+  if (carregando) {
+    return <h1>Carregando filmes...</h1>;
+  }
 
   return (
     <main>
@@ -69,8 +75,11 @@ export default function Filmes() {
         filmes.map((filme) => (
           <div key={filme.id}>
             <h2>{filme.nome}</h2>
+
             <p>Gênero: {filme.genero}</p>
+
             <p>Duração: {filme.duracao} minutos</p>
+
             <p>Classificação: {filme.classificacao}</p>
 
             {filme.imagem && (
@@ -80,16 +89,14 @@ export default function Filmes() {
                 width="200"
               />
             )}
-            <button
-                onClick={() => {
-                    window.location.href = `/editar-filme?id=${filme.id}`;
-                }}
-                >
-                Editar
-                </button>
-            <button
-              onClick={() => excluirFilme(filme.id)}
-            >
+
+            <br />
+
+            <button onClick={() => editarFilme(filme.id)}>
+              Editar
+            </button>
+
+            <button onClick={() => excluirFilme(filme.id)}>
               Excluir
             </button>
           </div>
