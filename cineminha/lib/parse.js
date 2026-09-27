@@ -1,4 +1,4 @@
-import Parse from "parse/dist/parse.min.js";
+import Parse from "parse";
 
 Parse.initialize(
   process.env.NEXT_PUBLIC_PARSE_APPLICATION_ID,
