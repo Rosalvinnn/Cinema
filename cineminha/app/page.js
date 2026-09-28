@@ -14,6 +14,7 @@ export default function Home() {
 
   const [filmes, setFilmes] = useState([]);
   const [carregandoFilmes, setCarregandoFilmes] = useState(true);
+  const [comprando, setComprando] = useState(false);
 
   const horarios = ["14:00", "16:30", "19:00", "21:30"];
 
@@ -45,13 +46,15 @@ export default function Home() {
 
   const selecionarCadeira = (numero) => {
     if (cadeiras.includes(numero)) {
-      setCadeiras(cadeiras.filter((item) => item !== numero));
+      setCadeiras(
+        cadeiras.filter((item) => item !== numero)
+      );
     } else {
       setCadeiras([...cadeiras, numero]);
     }
   };
 
-  const comprarIngresso = () => {
+  const comprarIngresso = async () => {
     if (!filme) {
       alert("Selecione um filme.");
       return;
@@ -67,17 +70,65 @@ export default function Home() {
       return;
     }
 
-    const dadosCompra = {
-      filme: filme,
-      horario: horario,
-      cadeiras: cadeiras,
-      quantidade: cadeiras.length,
-      valor: cadeiras.length * 25,
-    };
+    const usuario = Parse.User.current();
 
-    localStorage.setItem("compra", JSON.stringify(dadosCompra));
+    if (!usuario) {
+      alert(
+        "Você precisa estar logado para comprar um ingresso."
+      );
 
-    router.push("/confirmacao");
+      router.push("/conta/login");
+      return;
+    }
+
+    setComprando(true);
+
+    try {
+      const quantidade = cadeiras.length;
+      const valor = quantidade * 25;
+
+      const Ingresso = Parse.Object.extend("Ingresso");
+      const ingresso = new Ingresso();
+
+      ingresso.set("usuario", usuario);
+      ingresso.set("filme", filme);
+      ingresso.set("horario", horario);
+      ingresso.set("cadeiras", cadeiras);
+      ingresso.set("quantidade", quantidade);
+      ingresso.set("valor", valor);
+
+      const acl = new Parse.ACL(usuario);
+
+      acl.setReadAccess(usuario, true);
+      acl.setWriteAccess(usuario, false);
+
+      ingresso.setACL(acl);
+
+      await ingresso.save();
+
+      const dadosCompra = {
+        filme: filme,
+        horario: horario,
+        cadeiras: cadeiras,
+        quantidade: quantidade,
+        valor: valor,
+      };
+
+      localStorage.setItem(
+        "compra",
+        JSON.stringify(dadosCompra)
+      );
+
+      router.push("/confirmacao");
+    } catch (erro) {
+      console.error("Erro ao salvar ingresso:", erro);
+
+      alert(
+        "Não foi possível salvar a compra. Tente novamente."
+      );
+    } finally {
+      setComprando(false);
+    }
   };
 
   return (
@@ -91,12 +142,28 @@ export default function Home() {
           <a href="#filmes">Filmes</a>
           <a href="#horarios">Horários</a>
           <a href="#cadeiras">Cadeiras</a>
+
+          <button
+            onClick={() => {
+              const usuario = Parse.User.current();
+
+              if (usuario) {
+                router.push("/minha-conta");
+              } else {
+                router.push("/conta/login");
+              }
+            }}
+          >
+            👤 Minha conta
+          </button>
         </nav>
       </header>
 
       <section className="hero">
         <div>
-          <p className="subtitulo">BEM-VINDO AO CineMinha</p>
+          <p className="subtitulo">
+            BEM-VINDO AO CineMinha
+          </p>
 
           <h1>
             Seu filme.
@@ -107,8 +174,8 @@ export default function Home() {
           </h1>
 
           <p className="descricao">
-            Escolha seu filme, horário e suas cadeiras e garanta seus
-            ingressos.
+            Escolha seu filme, horário e suas cadeiras e
+            garanta seus ingressos.
           </p>
 
           <a href="#filmes" className="botaoHero">
@@ -135,11 +202,16 @@ export default function Home() {
                 <div
                   key={item.id}
                   className={`filme ${
-                    filme === item.nome ? "filmeSelecionado" : ""
+                    filme === item.nome
+                      ? "filmeSelecionado"
+                      : ""
                   }`}
                   onClick={() => setFilme(item.nome)}
                 >
-                  <img src={item.imagem} alt={item.nome} />
+                  <img
+                    src={item.imagem}
+                    alt={item.nome}
+                  />
 
                   <div className="filmeInfo">
                     <h3>{item.nome}</h3>
@@ -180,7 +252,9 @@ export default function Home() {
               <button
                 key={hora}
                 className={`horario ${
-                  horario === hora ? "horarioSelecionado" : ""
+                  horario === hora
+                    ? "horarioSelecionado"
+                    : ""
                 }`}
                 onClick={() => setHorario(hora)}
               >
@@ -209,7 +283,9 @@ export default function Home() {
                       ? "cadeiraSelecionada"
                       : ""
                   }`}
-                  onClick={() => selecionarCadeira(numero)}
+                  onClick={() =>
+                    selecionarCadeira(numero)
+                  }
                 >
                   {numero}
                 </button>
@@ -275,8 +351,11 @@ export default function Home() {
           <button
             className="botaoComprar"
             onClick={comprarIngresso}
+            disabled={comprando}
           >
-            Confirmar compra
+            {comprando
+              ? "Salvando compra..."
+              : "Confirmar compra"}
           </button>
         </section>
       </section>
