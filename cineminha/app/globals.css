@@ -738,3 +738,600 @@ box-shadow: none;
 border: 1px solid #ddd;
 }
 }
+
+/* =========================
+   PÁGINAS DE GERENCIAMENTO
+========================= */
+
+.paginaGerenciamento {
+  min-height: 100vh;
+  background: #0b0b0f;
+  color: #ffffff;
+  padding: 50px 7%;
+}
+
+.cabecalhoGerenciamento {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.cabecalhoGerenciamento h1 {
+  font-size: 38px;
+  margin-bottom: 10px;
+}
+
+.cabecalhoGerenciamento p {
+  color: #a7a7b0;
+  font-size: 16px;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+
+.botaoVoltarGerenciamento {
+  display: inline-block;
+  margin-bottom: 30px;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.botaoVoltarGerenciamento:hover {
+  color: #e50914;
+}
+
+/* =========================
+   PESQUISA TMDB
+========================= */
+
+.pesquisaTMDB {
+  max-width: 1200px;
+  margin: 0 auto 35px;
+  background: #15151b;
+  border: 1px solid #292932;
+  border-radius: 16px;
+  padding: 25px;
+}
+
+.pesquisaTMDB h2 {
+  margin-bottom: 18px;
+  font-size: 22px;
+}
+
+.campoPesquisa {
+  display: flex;
+  gap: 12px;
+}
+
+.campoPesquisa input {
+  flex: 1;
+  padding: 14px 16px;
+  background: #0d0d12;
+  border: 1px solid #34343e;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.campoPesquisa input:focus {
+  border-color: #e50914;
+}
+
+.botaoPesquisa {
+  padding: 14px 25px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoPesquisa:hover {
+  background: #b20710;
+  transform: translateY(-1px);
+}
+
+/* =========================
+   RESULTADOS DA TMDB
+========================= */
+
+.resultadosTMDB {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+}
+
+.resultadosTMDB h2 {
+  margin-bottom: 20px;
+}
+
+.cardsTMDB {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.cardTMDB {
+  background: #15151b;
+  border: 1px solid #292932;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.cardTMDB:hover {
+  transform: translateY(-5px);
+  border-color: #e50914;
+}
+
+.cardTMDB img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardTMDBInfo {
+  padding: 15px;
+}
+
+.cardTMDBInfo h3 {
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+.cardTMDBInfo p {
+  color: #a7a7b0;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.botaoUsarFilme {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoUsarFilme:hover {
+  background: #e50914;
+  color: #ffffff;
+}
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+.formularioFilme {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #15151b;
+  border: 1px solid #292932;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.formularioFilme h2 {
+  margin-bottom: 25px;
+}
+
+.formGrupo {
+  margin-bottom: 18px;
+}
+
+.formGrupo label {
+  display: block;
+  margin-bottom: 7px;
+  color: #d5d5dc;
+  font-size: 14px;
+}
+
+.formGrupo input {
+  width: 100%;
+  padding: 13px 15px;
+  background: #0d0d12;
+  border: 1px solid #34343e;
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 15px;
+  outline: none;
+}
+
+.formGrupo input:focus {
+  border-color: #e50914;
+}
+
+.botaoCadastrar {
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoCadastrar:hover {
+  background: #b20710;
+}
+
+/* =========================
+   MENSAGENS
+========================= */
+
+.mensagemFilme {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #182318;
+  color: #8ee28e;
+  text-align: center;
+}
+
+/* =========================
+   LISTA DE FILMES
+========================= */
+
+.listaFilmes {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gridFilmes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.cardFilme {
+  background: #15151b;
+  border: 1px solid #292932;
+  border-radius: 14px;
+  overflow: hidden;
+  transition: 0.25s;
+}
+
+.cardFilme:hover {
+  transform: translateY(-5px);
+  border-color: #e50914;
+}
+
+.cardFilme img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
+}
+
+.cardFilmeInfo {
+  padding: 18px;
+}
+
+.cardFilmeInfo h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.cardFilmeInfo p {
+  color: #a7a7b0;
+  margin: 6px 0;
+  font-size: 14px;
+}
+
+/* =========================
+   BOTÕES DOS FILMES
+========================= */
+
+.botoesFilme {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.botaoEditar {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background: #ffffff;
+  color: #111111;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoEditar:hover {
+  background: #dddddd;
+}
+
+.botaoExcluir {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 7px;
+  background: #8b0000;
+  color: #ffffff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoExcluir:hover {
+  background: #e50914;
+}
+
+/* =========================
+   PÁGINA DE EDIÇÃO
+========================= */
+
+.editarFilmePagina {
+  min-height: 100vh;
+  background: #0b0b0f;
+  color: #ffffff;
+  padding: 50px 20px;
+}
+
+.editarFilmeCard {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #15151b;
+  border: 1px solid #292932;
+  border-radius: 16px;
+  padding: 35px;
+}
+
+.editarFilmeCard h1 {
+  margin-bottom: 30px;
+  font-size: 32px;
+}
+
+.botaoSalvarAlteracoes {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.botaoSalvarAlteracoes:hover {
+  background: #b20710;
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 700px) {
+  .paginaGerenciamento {
+    padding: 30px 20px;
+  }
+
+  .cabecalhoGerenciamento h1 {
+    font-size: 30px;
+  }
+
+  .campoPesquisa {
+    flex-direction: column;
+  }
+
+  .botaoPesquisa {
+    width: 100%;
+  }
+
+  .cardsTMDB {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gridFilmes {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cardTMDB img {
+    height: 230px;
+  }
+
+  .cardFilme img {
+    height: 260px;
+  }
+
+  .editarFilmeCard,
+  .formularioFilme {
+    padding: 22px;
+  }
+}
+
+/* =========================
+   LOGIN
+========================= */
+
+.paginaLogin {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background: #080808;
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 430px;
+  padding: 40px;
+  border-radius: 18px;
+  background: #151515;
+  border: 1px solid #292929;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.loginLogo {
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.loginLogo span {
+  color: #e50914;
+}
+
+.loginCard h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.loginDescricao {
+  text-align: center;
+  color: #aaa;
+  margin-bottom: 30px;
+}
+
+.formularioLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.formularioLogin input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: white;
+  font-size: 15px;
+}
+
+.botaoLogin {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #e50914;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.botaoLogin:hover {
+  background: #b80710;
+}
+
+.botaoLogin:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.erroLogin {
+  color: #ff4d4d;
+  text-align: center;
+}
+
+.botaoVoltarLogin {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+.botaoVoltarLogin:hover {
+  background: #222;
+}
+
+
+/* =========================
+   PAINEL ADMINISTRATIVO
+========================= */
+
+.painelAdministrativo {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.cardAdministrativo {
+  background: #151515;
+  border: 1px solid #292929;
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.cardAdministrativo h2 {
+  margin-bottom: 15px;
+}
+
+.cardAdministrativo p {
+  color: #aaa;
+  line-height: 1.6;
+  min-height: 70px;
+}
+
+.cardAdministrativo button {
+  width: 100%;
+}
+
+
+/* =========================
+   IMAGEM AUSENTE
+========================= */
+
+.semImagem {
+  width: 100%;
+  min-height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+  color: #888;
+  border-radius: 10px;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 800px) {
+  .painelAdministrativo {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .loginCard {
+    padding: 25px;
+  }
+
+  .cabecalhoGerenciamento {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}

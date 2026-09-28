@@ -1,9 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Parse from "../../lib/parse";
 
 export default function EditarFilme() {
+  const router = useRouter();
+
   const [id, setId] = useState(null);
 
   const [nome, setNome] = useState("");
@@ -11,45 +14,69 @@ export default function EditarFilme() {
   const [duracao, setDuracao] = useState("");
   const [classificacao, setClassificacao] = useState("");
   const [imagem, setImagem] = useState("");
+
   const [mensagem, setMensagem] = useState("");
+  const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    const parametros = new URLSearchParams(window.location.search);
-    const idFilme = parametros.get("id");
+    const usuarioAtual = Parse.User.current();
 
-    setId(idFilme);
-
-    if (idFilme) {
-      buscarFilme(idFilme);
-    }
-  }, []);
-
-  const buscarFilme = async (idFilme) => {
-    try {
-      const query = new Parse.Query("Filme");
-      const filme = await query.get(idFilme);
-
-      setNome(filme.get("nome"));
-      setGenero(filme.get("genero"));
-      setDuracao(filme.get("duracao"));
-      setClassificacao(filme.get("classificacao"));
-      setImagem(filme.get("imagem"));
-    } catch (erro) {
-      console.error(erro);
-      setMensagem("Erro ao buscar filme.");
-    }
-  };
-
-  const atualizarFilme = async (e) => {
-    e.preventDefault();
-
-    if (!id) {
-      setMensagem("Filme não encontrado.");
+    if (!usuarioAtual) {
+      router.replace("/login");
       return;
     }
 
+    const parametros = new URLSearchParams(
+      window.location.search
+    );
+
+    const filmeId = parametros.get("id");
+
+    if (!filmeId) {
+      router.replace("/filmes");
+      return;
+    }
+
+    setId(filmeId);
+
+    carregarFilme(filmeId);
+  }, [router]);
+
+  async function carregarFilme(filmeId) {
     try {
       const query = new Parse.Query("Filme");
+
+      const filme = await query.get(filmeId);
+
+      setNome(filme.get("nome") || "");
+      setGenero(filme.get("genero") || "");
+      setDuracao(filme.get("duracao") || "");
+      setClassificacao(
+        filme.get("classificacao") || ""
+      );
+      setImagem(filme.get("imagem") || "");
+    } catch (erro) {
+      console.error(erro);
+
+      setMensagem("Não foi possível carregar o filme.");
+    } finally {
+      setCarregando(false);
+    }
+  }
+
+  async function salvarAlteracoes(e) {
+    e.preventDefault();
+
+    try {
+      const usuarioAtual = Parse.User.current();
+
+      if (!usuarioAtual) {
+        router.replace("/login");
+        return;
+      }
+
+      const query = new Parse.Query("Filme");
+
       const filme = await query.get(id);
 
       filme.set("nome", nome);
@@ -63,60 +90,117 @@ export default function EditarFilme() {
       setMensagem("Filme atualizado com sucesso!");
 
       setTimeout(() => {
-        window.location.href = "/filmes";
+        router.push("/filmes");
       }, 1000);
     } catch (erro) {
       console.error(erro);
-      setMensagem("Erro ao atualizar filme.");
+
+      setMensagem("Erro ao atualizar o filme.");
     }
-  };
+  }
+
+  if (carregando) {
+    return (
+      <main className="editarFilmePagina">
+        <p>Carregando filme...</p>
+      </main>
+    );
+  }
 
   return (
-    <main>
-      <h1>Editar Filme</h1>
+    <main className="editarFilmePagina">
+      <div className="editarFilmeCard">
+        <div className="cabecalhoGerenciamento">
+          <div>
+            <h1>Editar Filme</h1>
 
-      <form onSubmit={atualizarFilme}>
-        <input
-          type="text"
-          placeholder="Nome do filme"
-          value={nome}
-          onChange={(e) => setNome(e.target.value)}
-        />
+            <p>
+              Altere as informações do filme
+            </p>
+          </div>
 
-        <input
-          type="text"
-          placeholder="Gênero"
-          value={genero}
-          onChange={(e) => setGenero(e.target.value)}
-        />
+          <button
+            className="botaoVoltarGerenciamento"
+            onClick={() => router.push("/filmes")}
+          >
+            Voltar
+          </button>
+        </div>
 
-        <input
-          type="number"
-          placeholder="Duração em minutos"
-          value={duracao}
-          onChange={(e) => setDuracao(e.target.value)}
-        />
+        <form
+          onSubmit={salvarAlteracoes}
+          className="formularioFilme"
+        >
+          <div className="formGrupo">
+            <label>Nome</label>
 
-        <input
-          type="text"
-          placeholder="Classificação"
-          value={classificacao}
-          onChange={(e) => setClassificacao(e.target.value)}
-        />
+            <input
+              type="text"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              required
+            />
+          </div>
 
-        <input
-          type="text"
-          placeholder="URL da imagem"
-          value={imagem}
-          onChange={(e) => setImagem(e.target.value)}
-        />
+          <div className="formGrupo">
+            <label>Gênero</label>
 
-        <button type="submit">
-          Atualizar filme
-        </button>
-      </form>
+            <input
+              type="text"
+              value={genero}
+              onChange={(e) => setGenero(e.target.value)}
+              required
+            />
+          </div>
 
-      {mensagem && <p>{mensagem}</p>}
+          <div className="formGrupo">
+            <label>Duração</label>
+
+            <input
+              type="number"
+              value={duracao}
+              onChange={(e) => setDuracao(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="formGrupo">
+            <label>Classificação</label>
+
+            <input
+              type="text"
+              value={classificacao}
+              onChange={(e) =>
+                setClassificacao(e.target.value)
+              }
+              required
+            />
+          </div>
+
+          <div className="formGrupo">
+            <label>Imagem</label>
+
+            <input
+              type="text"
+              value={imagem}
+              onChange={(e) => setImagem(e.target.value)}
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="botaoSalvarAlteracoes"
+          >
+            Salvar alterações
+          </button>
+
+          {mensagem && (
+            <p className="mensagemFilme">
+              {mensagem}
+            </p>
+          )}
+        </form>
+      </div>
     </main>
   );
 }

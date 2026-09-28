@@ -1,7 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
+import Parse from "../lib/parse";
 import "./globals.css";
 
 export default function Home() {
@@ -11,28 +12,36 @@ export default function Home() {
   const [horario, setHorario] = useState("");
   const [cadeiras, setCadeiras] = useState([]);
 
-  const filmes = [
-    {
-      id: 1,
-      nome: "Carros 1",
-      imagem:
-        "https://image.tmdb.org/t/p/w1280/A7nssMRIPauZhEVf2dzwsf4EALO.jpg",
-    },
-    {
-      id: 2,
-      nome: "O Candidato Honesto 2",
-      imagem:
-        "https://www.themoviedb.org/t/p/w1280/nies8ZuM673DAtSufh4Ww3dJJyd.jpg",
-    },
-    {
-      id: 3,
-      nome: "O Gato de Botas 2",
-      imagem:
-        "https://www.themoviedb.org/t/p/w1280/i0tScFVNCcgDzz9AgjYd3LDXGTO.jpg",
-    },
-  ];
+  const [filmes, setFilmes] = useState([]);
+  const [carregandoFilmes, setCarregandoFilmes] = useState(true);
 
   const horarios = ["14:00", "16:30", "19:00", "21:30"];
+
+  useEffect(() => {
+    buscarFilmes();
+  }, []);
+
+  const buscarFilmes = async () => {
+    try {
+      const query = new Parse.Query("Filme");
+      const resultados = await query.find();
+
+      const listaFilmes = resultados.map((filme) => ({
+        id: filme.id,
+        nome: filme.get("nome"),
+        genero: filme.get("genero"),
+        duracao: filme.get("duracao"),
+        classificacao: filme.get("classificacao"),
+        imagem: filme.get("imagem"),
+      }));
+
+      setFilmes(listaFilmes);
+    } catch (erro) {
+      console.error("Erro ao buscar filmes:", erro);
+    } finally {
+      setCarregandoFilmes(false);
+    }
+  };
 
   const selecionarCadeira = (numero) => {
     if (cadeiras.includes(numero)) {
@@ -73,10 +82,9 @@ export default function Home() {
 
   return (
     <main className="pagina">
-
       <header className="header">
         <div className="logo">
-          <span>🎬</span> CineGuibs
+          <span>🎬</span> CineMax
         </div>
 
         <nav>
@@ -88,7 +96,7 @@ export default function Home() {
 
       <section className="hero">
         <div>
-          <p className="subtitulo">BEM-VINDO AO CineGuibs</p>
+          <p className="subtitulo">BEM-VINDO AO CineMinha</p>
 
           <h1>
             Seu filme.
@@ -110,7 +118,6 @@ export default function Home() {
       </section>
 
       <section className="conteudo">
-
         <section id="filmes" className="secao">
           <h2>Escolha seu filme</h2>
 
@@ -119,27 +126,45 @@ export default function Home() {
           </p>
 
           <div className="filmes">
-            {filmes.map((item) => (
-              <div
-                key={item.id}
-                className={`filme ${
-                  filme === item.nome ? "filmeSelecionado" : ""
-                }`}
-                onClick={() => setFilme(item.nome)}
-              >
-                <img src={item.imagem} alt={item.nome} />
+            {carregandoFilmes ? (
+              <p>Carregando filmes...</p>
+            ) : filmes.length === 0 ? (
+              <p>Nenhum filme disponível.</p>
+            ) : (
+              filmes.map((item) => (
+                <div
+                  key={item.id}
+                  className={`filme ${
+                    filme === item.nome ? "filmeSelecionado" : ""
+                  }`}
+                  onClick={() => setFilme(item.nome)}
+                >
+                  <img src={item.imagem} alt={item.nome} />
 
-                <div className="filmeInfo">
-                  <h3>{item.nome}</h3>
+                  <div className="filmeInfo">
+                    <h3>{item.nome}</h3>
 
-                  {filme === item.nome && (
-                    <span className="selecionado">
-                      ✓ Selecionado
-                    </span>
-                  )}
+                    {item.genero && (
+                      <p>{item.genero}</p>
+                    )}
+
+                    {item.duracao && (
+                      <p>{item.duracao} minutos</p>
+                    )}
+
+                    {item.classificacao && (
+                      <p>{item.classificacao}</p>
+                    )}
+
+                    {filme === item.nome && (
+                      <span className="selecionado">
+                        ✓ Selecionado
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))
+            )}
           </div>
         </section>
 
@@ -173,10 +198,7 @@ export default function Home() {
           </p>
 
           <div className="cinema">
-
-            <div className="tela">
-              TELA
-            </div>
+            <div className="tela">TELA</div>
 
             <div className="cadeiras">
               {[1, 2, 3, 4].map((numero) => (
@@ -195,7 +217,6 @@ export default function Home() {
             </div>
 
             <div className="legenda">
-
               <div>
                 <span className="quadrado disponivel"></span>
                 Disponível
@@ -205,18 +226,14 @@ export default function Home() {
                 <span className="quadrado selecionada"></span>
                 Selecionada
               </div>
-
             </div>
-
           </div>
         </section>
 
         <section className="resumo">
-
           <h2>Resumo da compra</h2>
 
           <div className="resumoConteudo">
-
             <div>
               <span>Filme</span>
 
@@ -247,12 +264,12 @@ export default function Home() {
               <span>Total</span>
 
               <strong>
-                R$ {(cadeiras.length * 25)
+                R${" "}
+                {(cadeiras.length * 25)
                   .toFixed(2)
                   .replace(".", ",")}
               </strong>
             </div>
-
           </div>
 
           <button
@@ -261,17 +278,14 @@ export default function Home() {
           >
             Confirmar compra
           </button>
-
         </section>
-
       </section>
 
       <footer>
         <p>
-          © 2026 CineGuibs — Sistema de compra de ingressos
+          © 2026 CineMinha — Sistema de compra de ingressos
         </p>
       </footer>
-
     </main>
   );
 }

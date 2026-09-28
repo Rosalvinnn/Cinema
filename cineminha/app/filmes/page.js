@@ -1,22 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import Parse from "../../lib/parse";
 
 export default function Filmes() {
+  const router = useRouter();
+
   const [filmes, setFilmes] = useState([]);
   const [carregando, setCarregando] = useState(true);
 
   useEffect(() => {
-    buscarFilmes();
-  }, []);
+    const usuarioAtual = Parse.User.current();
 
-  const buscarFilmes = async () => {
+    if (!usuarioAtual) {
+      router.replace("/login");
+      return;
+    }
+
+    carregarFilmes();
+  }, [router]);
+
+  async function carregarFilmes() {
     try {
       const query = new Parse.Query("Filme");
+
+      query.descending("createdAt");
+
       const resultados = await query.find();
 
-      const listaFilmes = resultados.map((filme) => ({
+      const lista = resultados.map((filme) => ({
         id: filme.id,
         nome: filme.get("nome"),
         genero: filme.get("genero"),
@@ -25,15 +38,15 @@ export default function Filmes() {
         imagem: filme.get("imagem"),
       }));
 
-      setFilmes(listaFilmes);
+      setFilmes(lista);
     } catch (erro) {
-      console.error("Erro ao buscar filmes:", erro);
+      console.error(erro);
     } finally {
       setCarregando(false);
     }
-  };
+  }
 
-  const excluirFilme = async (id) => {
+  async function excluirFilme(id) {
     const confirmar = window.confirm(
       "Tem certeza que deseja excluir este filme?"
     );
@@ -43,65 +56,117 @@ export default function Filmes() {
     }
 
     try {
+      const usuarioAtual = Parse.User.current();
+
+      if (!usuarioAtual) {
+        router.replace("/login");
+        return;
+      }
+
       const query = new Parse.Query("Filme");
+
       const filme = await query.get(id);
 
       await filme.destroy();
 
       setFilmes((filmesAtuais) =>
-        filmesAtuais.filter((item) => item.id !== id)
+        filmesAtuais.filter((filme) => filme.id !== id)
       );
     } catch (erro) {
-      console.error("Erro ao excluir filme:", erro);
-      alert("Erro ao excluir filme.");
-    }
-  };
+      console.error(erro);
 
-  const editarFilme = (id) => {
-    window.location.href = `/editar-filme?id=${id}`;
-  };
+      alert("Não foi possível excluir o filme.");
+    }
+  }
+
+  function editarFilme(id) {
+    router.push(`/editar-filme?id=${id}`);
+  }
 
   if (carregando) {
-    return <h1>Carregando filmes...</h1>;
+    return (
+      <main className="paginaGerenciamento">
+        <p>Carregando filmes...</p>
+      </main>
+    );
   }
 
   return (
-    <main>
-      <h1>Filmes cadastrados</h1>
+    <main className="paginaGerenciamento">
+      <header className="cabecalhoGerenciamento">
+        <div>
+          <h1>Gerenciar Filmes</h1>
 
-      {filmes.length === 0 ? (
-        <p>Nenhum filme cadastrado.</p>
-      ) : (
-        filmes.map((filme) => (
-          <div key={filme.id}>
-            <h2>{filme.nome}</h2>
+          <p>
+            Filmes cadastrados no CineGuibs
+          </p>
+        </div>
 
-            <p>Gênero: {filme.genero}</p>
+        <button
+          className="botaoVoltarGerenciamento"
+          onClick={() => router.push("/administracao")}
+        >
+          Voltar
+        </button>
+      </header>
 
-            <p>Duração: {filme.duracao} minutos</p>
+      <section className="listaFilmes">
+        {filmes.length === 0 ? (
+          <p>Nenhum filme cadastrado.</p>
+        ) : (
+          <div className="gridFilmes">
+            {filmes.map((filme) => (
+              <div className="cardFilme" key={filme.id}>
+                {filme.imagem ? (
+                  <img
+                    src={filme.imagem}
+                    alt={filme.nome}
+                  />
+                ) : (
+                  <div className="semImagem">
+                    Sem imagem
+                  </div>
+                )}
 
-            <p>Classificação: {filme.classificacao}</p>
+                <div className="cardFilmeInfo">
+                  <h2>{filme.nome}</h2>
 
-            {filme.imagem && (
-              <img
-                src={filme.imagem}
-                alt={filme.nome}
-                width="200"
-              />
-            )}
+                  <p>
+                    <strong>Gênero:</strong>{" "}
+                    {filme.genero}
+                  </p>
 
-            <br />
+                  <p>
+                    <strong>Duração:</strong>{" "}
+                    {filme.duracao} minutos
+                  </p>
 
-            <button onClick={() => editarFilme(filme.id)}>
-              Editar
-            </button>
+                  <p>
+                    <strong>Classificação:</strong>{" "}
+                    {filme.classificacao}
+                  </p>
 
-            <button onClick={() => excluirFilme(filme.id)}>
-              Excluir
-            </button>
+                  <div className="botoesFilme">
+                    <button
+                      className="botaoEditar"
+                      onClick={() => editarFilme(filme.id)}
+                    >
+                      Editar
+                    </button>
+
+                    <button
+                      className="botaoExcluir"
+                      onClick={() => excluirFilme(filme.id)}
+                    >
+                      Excluir
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
-        ))
-      )}
+        )}
+      </section>
     </main>
   );
 }
