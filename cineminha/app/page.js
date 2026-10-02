@@ -19,6 +19,9 @@ export default function Home() {
   const horarios = ["14:00", "16:30", "19:00", "21:30"];
 
   useEffect(() => {
+    console.log("Parse App ID:", process.env.NEXT_PUBLIC_PARSE_APPLICATION_ID);
+    console.log("Parse Server:", process.env.NEXT_PUBLIC_PARSE_SERVER_URL);
+
     buscarFilmes();
   }, []);
 
