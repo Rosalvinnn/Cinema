@@ -122,7 +122,7 @@ export default function CadastroFilme() {
       <header className="cabecalhoGerenciamento">
         <div>
           <h1>Cadastrar Filme</h1>
-          <p>Adicione um novo filme ao CineGuibs</p>
+          <p>Adicione um novo filme ao CineMinha</p>
         </div>
 
         <button

@@ -57,7 +57,7 @@ export default function Confirmacao() {
         <div className="ingresso">
 
           <div className="ingressoTopo">
-            <span>CineGuibs</span>
+            <span>CineMinha</span>
             <span>INGRESSO</span>
           </div>
 

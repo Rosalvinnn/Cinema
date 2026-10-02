@@ -134,7 +134,7 @@ function Home() {
                                 lineNumber: 138,
                                 columnNumber: 11
                             }, this),
-                            " CineMax"
+                            " CineMinha"
                         ]
                     }, void 0, true, {
                         fileName: "[project]/cineminha/app/page.js",
@@ -168,6 +168,7 @@ function Home() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                className: "botaoConta",
                                 onClick: ()=>{
                                     const usuario = __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$lib$2f$parse$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"].User.current();
                                     if (usuario) {
@@ -180,7 +181,7 @@ function Home() {
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
                                 lineNumber: 146,
-                                columnNumber: 11
+                                columnNumber: 9
                             }, this)
                         ]
                     }, void 0, true, {
@@ -203,7 +204,7 @@ function Home() {
                             children: "BEM-VINDO AO CineMinha"
                         }, void 0, false, {
                             fileName: "[project]/cineminha/app/page.js",
-                            lineNumber: 164,
+                            lineNumber: 165,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -211,20 +212,20 @@ function Home() {
                                 "Seu filme.",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/cineminha/app/page.js",
-                                    lineNumber: 170,
+                                    lineNumber: 171,
                                     columnNumber: 13
                                 }, this),
                                 "Sua cadeira.",
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("br", {}, void 0, false, {
                                     fileName: "[project]/cineminha/app/page.js",
-                                    lineNumber: 172,
+                                    lineNumber: 173,
                                     columnNumber: 13
                                 }, this),
                                 "Sua experiência."
                             ]
                         }, void 0, true, {
                             fileName: "[project]/cineminha/app/page.js",
-                            lineNumber: 168,
+                            lineNumber: 169,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -232,7 +233,7 @@ function Home() {
                             children: "Escolha seu filme, horário e suas cadeiras e garanta seus ingressos."
                         }, void 0, false, {
                             fileName: "[project]/cineminha/app/page.js",
-                            lineNumber: 176,
+                            lineNumber: 177,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
@@ -241,18 +242,18 @@ function Home() {
                             children: "Comprar ingresso"
                         }, void 0, false, {
                             fileName: "[project]/cineminha/app/page.js",
-                            lineNumber: 181,
+                            lineNumber: 182,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/cineminha/app/page.js",
-                    lineNumber: 163,
+                    lineNumber: 164,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/cineminha/app/page.js",
-                lineNumber: 162,
+                lineNumber: 163,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -266,7 +267,7 @@ function Home() {
                                 children: "Escolha seu filme"
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 189,
+                                lineNumber: 190,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -274,7 +275,7 @@ function Home() {
                                 children: "Selecione o filme que deseja assistir."
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 191,
+                                lineNumber: 192,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -283,13 +284,13 @@ function Home() {
                                     children: "Carregando filmes..."
                                 }, void 0, false, {
                                     fileName: "[project]/cineminha/app/page.js",
-                                    lineNumber: 197,
+                                    lineNumber: 198,
                                     columnNumber: 15
                                 }, this) : filmes.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     children: "Nenhum filme disponível."
                                 }, void 0, false, {
                                     fileName: "[project]/cineminha/app/page.js",
-                                    lineNumber: 199,
+                                    lineNumber: 200,
                                     columnNumber: 15
                                 }, this) : filmes.map((item)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: `filme ${filme === item.nome ? "filmeSelecionado" : ""}`,
@@ -300,7 +301,7 @@ function Home() {
                                                 alt: item.nome
                                             }, void 0, false, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 211,
+                                                lineNumber: 212,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -310,14 +311,14 @@ function Home() {
                                                         children: item.nome
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 217,
+                                                        lineNumber: 218,
                                                         columnNumber: 21
                                                     }, this),
                                                     item.genero && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: item.genero
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 220,
+                                                        lineNumber: 221,
                                                         columnNumber: 23
                                                     }, this),
                                                     item.duracao && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -327,14 +328,14 @@ function Home() {
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 224,
+                                                        lineNumber: 225,
                                                         columnNumber: 23
                                                     }, this),
                                                     item.classificacao && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                         children: item.classificacao
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 228,
+                                                        lineNumber: 229,
                                                         columnNumber: 23
                                                     }, this),
                                                     filme === item.nome && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -342,30 +343,30 @@ function Home() {
                                                         children: "✓ Selecionado"
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 232,
+                                                        lineNumber: 233,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 216,
+                                                lineNumber: 217,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, item.id, true, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 202,
+                                        lineNumber: 203,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 195,
+                                lineNumber: 196,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/cineminha/app/page.js",
-                        lineNumber: 188,
+                        lineNumber: 189,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -376,7 +377,7 @@ function Home() {
                                 children: "Escolha o horário"
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 244,
+                                lineNumber: 245,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -384,7 +385,7 @@ function Home() {
                                 children: "Selecione um dos horários disponíveis."
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 246,
+                                lineNumber: 247,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -395,18 +396,18 @@ function Home() {
                                         children: hora
                                     }, hora, false, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 252,
+                                        lineNumber: 253,
                                         columnNumber: 15
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 250,
+                                lineNumber: 251,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/cineminha/app/page.js",
-                        lineNumber: 243,
+                        lineNumber: 244,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -417,7 +418,7 @@ function Home() {
                                 children: "Escolha suas cadeiras"
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 268,
+                                lineNumber: 269,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -425,7 +426,7 @@ function Home() {
                                 children: "Você pode selecionar mais de uma cadeira."
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 270,
+                                lineNumber: 271,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -436,29 +437,71 @@ function Home() {
                                         children: "TELA"
                                     }, void 0, false, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 275,
+                                        lineNumber: 276,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "cadeiras",
                                         children: [
-                                            1,
-                                            2,
-                                            3,
-                                            4
-                                        ].map((numero)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                className: `cadeira ${cadeiras.includes(numero) ? "cadeiraSelecionada" : ""}`,
-                                                onClick: ()=>selecionarCadeira(numero),
-                                                children: numero
-                                            }, numero, false, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "fileira",
+                                                children: [
+                                                    1,
+                                                    2,
+                                                    3,
+                                                    4,
+                                                    5,
+                                                    6,
+                                                    7,
+                                                    8,
+                                                    9,
+                                                    10
+                                                ].map((numero)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        className: `cadeira ${cadeiras.includes(numero) ? "cadeiraSelecionada" : ""}`,
+                                                        onClick: ()=>selecionarCadeira(numero),
+                                                        children: numero
+                                                    }, numero, false, {
+                                                        fileName: "[project]/cineminha/app/page.js",
+                                                        lineNumber: 281,
+                                                        columnNumber: 17
+                                                    }, this))
+                                            }, void 0, false, {
                                                 fileName: "[project]/cineminha/app/page.js",
                                                 lineNumber: 279,
-                                                columnNumber: 17
-                                            }, this))
-                                    }, void 0, false, {
+                                                columnNumber: 13
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "fileira",
+                                                children: [
+                                                    11,
+                                                    12,
+                                                    13,
+                                                    14,
+                                                    15,
+                                                    16,
+                                                    17,
+                                                    18,
+                                                    19,
+                                                    20
+                                                ].map((numero)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                        className: `cadeira ${cadeiras.includes(numero + 10) ? "cadeiraSelecionada" : ""}`,
+                                                        onClick: ()=>selecionarCadeira(numero + 10),
+                                                        children: numero
+                                                    }, `segunda-${numero}`, false, {
+                                                        fileName: "[project]/cineminha/app/page.js",
+                                                        lineNumber: 297,
+                                                        columnNumber: 17
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/cineminha/app/page.js",
+                                                lineNumber: 295,
+                                                columnNumber: 13
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 277,
-                                        columnNumber: 13
+                                        lineNumber: 278,
+                                        columnNumber: 11
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         className: "legenda",
@@ -469,14 +512,14 @@ function Home() {
                                                         className: "quadrado disponivel"
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 297,
+                                                        lineNumber: 313,
                                                         columnNumber: 17
                                                     }, this),
                                                     "Disponível"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 296,
+                                                lineNumber: 312,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -485,32 +528,32 @@ function Home() {
                                                         className: "quadrado selecionada"
                                                     }, void 0, false, {
                                                         fileName: "[project]/cineminha/app/page.js",
-                                                        lineNumber: 302,
+                                                        lineNumber: 318,
                                                         columnNumber: 17
                                                     }, this),
                                                     "Selecionada"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 301,
+                                                lineNumber: 317,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 295,
+                                        lineNumber: 311,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 274,
+                                lineNumber: 275,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/cineminha/app/page.js",
-                        lineNumber: 267,
+                        lineNumber: 268,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -520,7 +563,7 @@ function Home() {
                                 children: "Resumo da compra"
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 310,
+                                lineNumber: 326,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -532,55 +575,11 @@ function Home() {
                                                 children: "Filme"
                                             }, void 0, false, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 314,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: filme || "Não selecionado"
-                                            }, void 0, false, {
-                                                fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 316,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 313,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Horário"
-                                            }, void 0, false, {
-                                                fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 322,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: horario || "Não selecionado"
-                                            }, void 0, false, {
-                                                fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 324,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 321,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Cadeiras"
-                                            }, void 0, false, {
-                                                fileName: "[project]/cineminha/app/page.js",
                                                 lineNumber: 330,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
-                                                children: cadeiras.length > 0 ? cadeiras.join(", ") : "Não selecionadas"
+                                                children: filme || "Não selecionado"
                                             }, void 0, false, {
                                                 fileName: "[project]/cineminha/app/page.js",
                                                 lineNumber: 332,
@@ -595,10 +594,54 @@ function Home() {
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                children: "Total"
+                                                children: "Horário"
+                                            }, void 0, false, {
+                                                fileName: "[project]/cineminha/app/page.js",
+                                                lineNumber: 338,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                children: horario || "Não selecionado"
                                             }, void 0, false, {
                                                 fileName: "[project]/cineminha/app/page.js",
                                                 lineNumber: 340,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/cineminha/app/page.js",
+                                        lineNumber: 337,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Cadeiras"
+                                            }, void 0, false, {
+                                                fileName: "[project]/cineminha/app/page.js",
+                                                lineNumber: 346,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
+                                                children: cadeiras.length > 0 ? cadeiras.join(", ") : "Não selecionadas"
+                                            }, void 0, false, {
+                                                fileName: "[project]/cineminha/app/page.js",
+                                                lineNumber: 348,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/cineminha/app/page.js",
+                                        lineNumber: 345,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                children: "Total"
+                                            }, void 0, false, {
+                                                fileName: "[project]/cineminha/app/page.js",
+                                                lineNumber: 356,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("strong", {
@@ -609,19 +652,19 @@ function Home() {
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/cineminha/app/page.js",
-                                                lineNumber: 342,
+                                                lineNumber: 358,
                                                 columnNumber: 15
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/cineminha/app/page.js",
-                                        lineNumber: 339,
+                                        lineNumber: 355,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 312,
+                                lineNumber: 328,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -631,19 +674,19 @@ function Home() {
                                 children: comprando ? "Salvando compra..." : "Confirmar compra"
                             }, void 0, false, {
                                 fileName: "[project]/cineminha/app/page.js",
-                                lineNumber: 351,
+                                lineNumber: 367,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/cineminha/app/page.js",
-                        lineNumber: 309,
+                        lineNumber: 325,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/cineminha/app/page.js",
-                lineNumber: 187,
+                lineNumber: 188,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$cineminha$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("footer", {
@@ -651,12 +694,12 @@ function Home() {
                     children: "© 2026 CineMinha — Sistema de compra de ingressos"
                 }, void 0, false, {
                     fileName: "[project]/cineminha/app/page.js",
-                    lineNumber: 364,
+                    lineNumber: 380,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/cineminha/app/page.js",
-                lineNumber: 363,
+                lineNumber: 379,
                 columnNumber: 7
             }, this)
         ]

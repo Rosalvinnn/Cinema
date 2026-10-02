@@ -48,6 +48,7 @@ button {
 }
 
 .header nav {
+  align-items: center;
   gap: 30px;
   display: flex;
 }
@@ -230,6 +231,13 @@ button {
 }
 
 .cadeiras {
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  display: flex;
+}
+
+.fileira {
   justify-content: center;
   gap: 25px;
   display: flex;
@@ -1180,6 +1188,38 @@ footer {
     align-items: flex-start;
     gap: 20px;
   }
+}
+
+.botaoConta {
+  color: #fff;
+  cursor: pointer;
+  background: #15151c;
+  border: 1px solid #34343e;
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: all .3s;
+}
+
+.botaoConta:hover {
+  background: #e50914;
+  border-color: #e50914;
+  transform: translateY(-2px);
+}
+
+.botaoVoltarGerenciamento {
+  color: #fff;
+  cursor: pointer;
+  background: #e50914;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.botaoSair:hover {
+  background: #b20710;
 }
 
 /*# sourceMappingURL=cineminha_app_globals_css_1igg3k2._.single.css.map*/

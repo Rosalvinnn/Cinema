@@ -98,7 +98,7 @@ export default function Filmes() {
           <h1>Gerenciar Filmes</h1>
 
           <p>
-            Filmes cadastrados no CineGuibs
+            Filmes cadastrados no CineMinha
           </p>
         </div>
 

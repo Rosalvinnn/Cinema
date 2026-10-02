@@ -44,7 +44,7 @@ export default function LoginCliente() {
     <main className="paginaLogin">
       <div className="loginCard">
         <div className="loginLogo">
-          <span>CINE</span>GUIBS
+          <span>CINE</span>MINHA
         </div>
 
         <h1>Entrar</h1>

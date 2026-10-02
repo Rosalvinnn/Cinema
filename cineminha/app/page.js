@@ -135,7 +135,7 @@ export default function Home() {
     <main className="pagina">
       <header className="header">
         <div className="logo">
-          <span>🎬</span> CineMax
+          <span>🎬</span> CineMinha
         </div>
 
         <nav>
@@ -143,19 +143,20 @@ export default function Home() {
           <a href="#horarios">Horários</a>
           <a href="#cadeiras">Cadeiras</a>
 
-          <button
-            onClick={() => {
-              const usuario = Parse.User.current();
+        <button
+          className="botaoConta"
+          onClick={() => {
+            const usuario = Parse.User.current();
 
-              if (usuario) {
-                router.push("/minha-conta");
-              } else {
-                router.push("/conta/login");
-              }
-            }}
-          >
-            👤 Minha conta
-          </button>
+            if (usuario) {
+              router.push("/minha-conta");
+            } else {
+              router.push("/conta/login");
+            }
+          }}
+        >
+          👤 Minha conta
+        </button>
         </nav>
       </header>
 
@@ -274,8 +275,9 @@ export default function Home() {
           <div className="cinema">
             <div className="tela">TELA</div>
 
-            <div className="cadeiras">
-              {[1, 2, 3, 4].map((numero) => (
+          <div className="cadeiras">
+            <div className="fileira">
+              {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((numero) => (
                 <button
                   key={numero}
                   className={`cadeira ${
@@ -283,15 +285,29 @@ export default function Home() {
                       ? "cadeiraSelecionada"
                       : ""
                   }`}
-                  onClick={() =>
-                    selecionarCadeira(numero)
-                  }
+                  onClick={() => selecionarCadeira(numero)}
                 >
                   {numero}
                 </button>
               ))}
             </div>
 
+            <div className="fileira">
+              {[11, 12, 13, 14, 15, 16, 17, 18, 19, 20].map((numero) => (
+                <button
+                  key={`segunda-${numero}`}
+                  className={`cadeira ${
+                    cadeiras.includes(numero + 10)
+                      ? "cadeiraSelecionada"
+                      : ""
+                  }`}
+                  onClick={() => selecionarCadeira(numero + 10)}
+                >
+                  {numero}
+                </button>
+              ))}
+            </div>
+          </div>
             <div className="legenda">
               <div>
                 <span className="quadrado disponivel"></span>
