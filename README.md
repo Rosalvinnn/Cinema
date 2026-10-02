@@ -1,10 +1,10 @@
 # 🎬 CineMinha
 
 # ALUNOS:
-
+```text
 Rosalvo Alves de Oliveira Filho  RA: 00000854909
 Lucas Hudson Caxilé              RA: 00000853721
-
+```
 
 Sistema de cinema desenvolvido com **Next.js**, permitindo consultar filmes, escolher horários, selecionar cadeiras e realizar compras de ingressos.
 
